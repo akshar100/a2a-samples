@@ -1,0 +1,52 @@
+# .github/workflows/agentic-report.yml  (owner mode)
+# Generates and maintains the per-sample agentic architecture report.
+# Commit once; it maintains itself: rescans nightly, on any sample change,
+# or on demand, and commits the refreshed report + badges only when changed.
+
+name: Agentic architecture report
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  push:
+    branches: [main]
+    paths: ["samples/**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out the linter (pinned to v0)
+        uses: actions/checkout@v4
+        with:
+          repository: akshar100/agentic-patterns
+          ref: v0
+          path: .linter
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rescan all samples
+        run: |
+          pip install --quiet pyyaml
+          python .linter/tools/scan_collection.py \
+            --root samples/python/agents \
+            --rules .linter/agentic-pattern-rules.yaml \
+            --out .github/agentic
+
+      - name: Commit if changed
+        run: |
+          rm -rf .linter
+          git config user.name "agentic-pattern-linter[bot]"
+          git config user.email "bot@agenticprotocols.dev"
+          git add .github/agentic
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "chore: refresh agentic architecture report [skip ci]"
+          git push
