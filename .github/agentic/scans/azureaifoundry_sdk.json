@@ -1,0 +1,158 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/azureaifoundry_sdk",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.655798+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "semantic_kernel",
+      "source": "both"
+    },
+    {
+      "id": "a2a_sdk",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "react_loop",
+      "name": "Reason and Act Loop",
+      "abbrev": "ReAct",
+      "section": "IV-A",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "multi_agent/remote_agents/playwright_agent/agent.py",
+          "line": 13,
+          "symbol": "ChatCompletionAgent",
+          "rule_id": "semantic_kernel/react_loop",
+          "excerpt": "from semantic_kernel.agents import ChatCompletionAgent"
+        }
+      ]
+    },
+    {
+      "id": "protocol_integration",
+      "name": "Protocol-Level Integration",
+      "abbrev": "MCP",
+      "section": "VII-B",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "azurefoundryagent/__main__.py",
+          "line": 7,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "azurefoundryagent/__main__.py",
+          "line": 101,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "a2a_app = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "currencyagentdemo/currencyagent/__main__.py",
+          "line": 6,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "currencyagentdemo/currencyagent/__main__.py",
+          "line": 46,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "server = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "multi_agent/remote_agents/playwright_agent/__main__.py",
+          "line": 6,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "config",
+          "file": "currencyagentdemo/currencyagent/pyproject.toml",
+          "symbol": "mcp",
+          "rule_id": "config/protocol_integration"
+        }
+      ]
+    },
+    {
+      "id": "handoff",
+      "name": "Handoff",
+      "abbrev": "Handoff",
+      "section": "V-E",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "azurefoundryagent/test_client.py",
+          "line": 9,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "from a2a.client import A2ACardResolver, A2AClient"
+        },
+        {
+          "type": "symbol",
+          "file": "azurefoundryagent/test_client.py",
+          "line": 172,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "client = A2AClient("
+        },
+        {
+          "type": "symbol",
+          "file": "multi_agent/host_agent/remote_agent_connection.py",
+          "line": 5,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "from a2a.client import A2AClient"
+        },
+        {
+          "type": "symbol",
+          "file": "multi_agent/host_agent/remote_agent_connection.py",
+          "line": 30,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "self.agent_client = A2AClient("
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 3,
+    "detected_count": 3,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": true,
+      "agent_multiplicity": true,
+      "memory_scope": false,
+      "human_involvement": false
+    }
+  }
+}

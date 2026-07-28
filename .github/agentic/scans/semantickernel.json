@@ -1,0 +1,133 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/semantickernel",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.726432+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "semantic_kernel",
+      "source": "both"
+    },
+    {
+      "id": "a2a_sdk",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "react_loop",
+      "name": "Reason and Act Loop",
+      "abbrev": "ReAct",
+      "section": "IV-A",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 13,
+          "symbol": "ChatCompletionAgent",
+          "rule_id": "semantic_kernel/react_loop",
+          "excerpt": "from semantic_kernel.agents import ChatCompletionAgent, ChatHistoryAgentThread"
+        },
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 163,
+          "symbol": "ChatCompletionAgent",
+          "rule_id": "semantic_kernel/react_loop",
+          "excerpt": "currency_exchange_agent = ChatCompletionAgent("
+        },
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 176,
+          "symbol": "ChatCompletionAgent",
+          "rule_id": "semantic_kernel/react_loop",
+          "excerpt": "activity_planner_agent = ChatCompletionAgent("
+        },
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 189,
+          "symbol": "ChatCompletionAgent",
+          "rule_id": "semantic_kernel/react_loop",
+          "excerpt": "self.agent = ChatCompletionAgent("
+        }
+      ]
+    },
+    {
+      "id": "protocol_integration",
+      "name": "Protocol-Level Integration",
+      "abbrev": "MCP",
+      "section": "VII-B",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 6,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 34,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "server = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 7,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.request_handlers import DefaultRequestHandler"
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 27,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "request_handler = DefaultRequestHandler("
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 9,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import AgentCapabilities, AgentCard, AgentSkill"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 2,
+    "detected_count": 2,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": true,
+      "agent_multiplicity": false,
+      "memory_scope": false,
+      "human_involvement": false
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/birthday_planner_adk",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.666239+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "a2a_sdk",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "protocol_integration",
+      "name": "Protocol-Level Integration",
+      "abbrev": "MCP",
+      "section": "VII-B",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "calendar_agent/__main__.py",
+          "line": 10,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "calendar_agent/__main__.py",
+          "line": 152,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "a2a_app = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "birthday_planner/__main__.py",
+          "line": 9,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "birthday_planner/__main__.py",
+          "line": 70,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "app = A2AStarletteApplication(agent_card, request_handler)"
+        },
+        {
+          "type": "symbol",
+          "file": "calendar_agent/__main__.py",
+          "line": 11,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.request_handlers import DefaultRequestHandler"
+        }
+      ]
+    },
+    {
+      "id": "handoff",
+      "name": "Handoff",
+      "abbrev": "Handoff",
+      "section": "V-E",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "birthday_planner/adk_agent_executor.py",
+          "line": 12,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "from a2a.client import A2AClient"
+        },
+        {
+          "type": "symbol",
+          "file": "birthday_planner/adk_agent_executor.py",
+          "line": 207,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "a2a_client = A2AClient("
+        },
+        {
+          "type": "symbol",
+          "file": "birthday_planner/adk_agent_executor.py",
+          "line": 307,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "calendar_agent_client = A2AClient("
+        },
+        {
+          "type": "symbol",
+          "file": "birthday_planner/adk_agent_executor.py",
+          "line": 314,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "a2a_client = A2AClient("
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 2,
+    "detected_count": 2,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": false,
+      "agent_multiplicity": true,
+      "memory_scope": false,
+      "human_involvement": false
+    }
+  }
+}

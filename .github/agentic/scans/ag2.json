@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/ag2",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.593408+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "autogen",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "react_loop",
+      "name": "Reason and Act Loop",
+      "abbrev": "ReAct",
+      "section": "IV-A",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "a2a_python_reviewer.py",
+          "line": 6,
+          "symbol": "ConversableAgent",
+          "rule_id": "autogen/react_loop",
+          "excerpt": "from autogen import ConversableAgent, LLMConfig"
+        },
+        {
+          "type": "symbol",
+          "file": "a2a_python_reviewer.py",
+          "line": 19,
+          "symbol": "ConversableAgent",
+          "rule_id": "autogen/react_loop",
+          "excerpt": "reviewer_agent = ConversableAgent("
+        },
+        {
+          "type": "symbol",
+          "file": "fastapi_codegen_a2a_client.py",
+          "line": 3,
+          "symbol": "ConversableAgent",
+          "rule_id": "autogen/react_loop",
+          "excerpt": "from autogen import ConversableAgent, LLMConfig"
+        },
+        {
+          "type": "symbol",
+          "file": "fastapi_codegen_a2a_client.py",
+          "line": 14,
+          "symbol": "ConversableAgent",
+          "rule_id": "autogen/react_loop",
+          "excerpt": "codegen_agent = ConversableAgent("
+        },
+        {
+          "type": "symbol",
+          "file": "cli_codegen_a2a_client.py",
+          "line": 3,
+          "symbol": "ConversableAgent",
+          "rule_id": "autogen/react_loop",
+          "excerpt": "from autogen import ConversableAgent, LLMConfig"
+        }
+      ]
+    },
+    {
+      "id": "human_in_the_loop",
+      "name": "Human-in-the-Loop",
+      "abbrev": "HITL",
+      "section": "VII-A",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "kwarg",
+          "file": "a2a_python_reviewer.py",
+          "line": 19,
+          "symbol": "human_input_mode",
+          "rule_id": "autogen/human_in_the_loop",
+          "excerpt": "reviewer_agent = ConversableAgent("
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 2,
+    "detected_count": 2,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": true,
+      "agent_multiplicity": false,
+      "memory_scope": false,
+      "human_involvement": true
+    }
+  }
+}

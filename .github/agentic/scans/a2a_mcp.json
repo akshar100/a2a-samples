@@ -1,0 +1,234 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/a2a_mcp",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.573743+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "langgraph_langchain",
+      "source": "both"
+    },
+    {
+      "id": "a2a_sdk",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "structured_workflow",
+      "name": "Structured Workflow with Agentic Islands",
+      "abbrev": "Workflow",
+      "section": "IV-F",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/common/workflow.py",
+          "line": 135,
+          "symbol": "add_node",
+          "rule_id": "langgraph_langchain/structured_workflow",
+          "excerpt": "self.graph.add_node(node.id, query=node.task)"
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/agents/orchestrator_agent.py",
+          "line": 95,
+          "symbol": "add_node",
+          "rule_id": "langgraph_langchain/structured_workflow",
+          "excerpt": "self.graph.add_node(node)"
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/common/workflow.py",
+          "line": 143,
+          "symbol": "add_edge",
+          "rule_id": "langgraph_langchain/structured_workflow",
+          "excerpt": "self.graph.add_edge(from_node_id, to_node_id)"
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/agents/orchestrator_agent.py",
+          "line": 97,
+          "symbol": "add_edge",
+          "rule_id": "langgraph_langchain/structured_workflow",
+          "excerpt": "self.graph.add_edge(node_id, node.id)"
+        }
+      ]
+    },
+    {
+      "id": "react_loop",
+      "name": "Reason and Act Loop",
+      "abbrev": "ReAct",
+      "section": "IV-A",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/agents/langgraph_planner_agent.py",
+          "line": 15,
+          "symbol": "create_react_agent",
+          "rule_id": "langgraph_langchain/react_loop",
+          "excerpt": "from langgraph.prebuilt import create_react_agent"
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/agents/langgraph_planner_agent.py",
+          "line": 53,
+          "symbol": "create_react_agent",
+          "rule_id": "langgraph_langchain/react_loop",
+          "excerpt": "self.graph = create_react_agent("
+        }
+      ]
+    },
+    {
+      "id": "checkpointing",
+      "name": "Checkpointing and Resumability",
+      "abbrev": "Checkpoint",
+      "section": "VI-E",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/agents/langgraph_planner_agent.py",
+          "line": 14,
+          "symbol": "MemorySaver",
+          "rule_id": "langgraph_langchain/checkpointing",
+          "excerpt": "from langgraph.checkpoint.memory import MemorySaver"
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/agents/langgraph_planner_agent.py",
+          "line": 19,
+          "symbol": "MemorySaver",
+          "rule_id": "langgraph_langchain/checkpointing",
+          "excerpt": "memory = MemorySaver()"
+        },
+        {
+          "type": "kwarg",
+          "file": "src/a2a_mcp/agents/langgraph_planner_agent.py",
+          "line": 53,
+          "symbol": "checkpointer",
+          "rule_id": "langgraph_langchain/checkpointing",
+          "excerpt": "self.graph = create_react_agent("
+        }
+      ]
+    },
+    {
+      "id": "protocol_integration",
+      "name": "Protocol-Level Integration",
+      "abbrev": "MCP",
+      "section": "VII-B",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/agents/__main__.py",
+          "line": 13,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/agents/__main__.py",
+          "line": 87,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "server = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/agents/__main__.py",
+          "line": 14,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.request_handlers import DefaultRequestHandler"
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/agents/__main__.py",
+          "line": 80,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "request_handler = DefaultRequestHandler("
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/common/workflow.py",
+          "line": 13,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import ("
+        },
+        {
+          "type": "config",
+          "file": "pyproject.toml",
+          "symbol": "mcp",
+          "rule_id": "config/protocol_integration"
+        },
+        {
+          "type": "config",
+          "file": "pyproject.toml",
+          "symbol": "fastmcp",
+          "rule_id": "config/protocol_integration"
+        }
+      ]
+    },
+    {
+      "id": "handoff",
+      "name": "Handoff",
+      "abbrev": "Handoff",
+      "section": "V-E",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/common/workflow.py",
+          "line": 12,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "from a2a.client import A2AClient"
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/common/workflow.py",
+          "line": 97,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "client = A2AClient(httpx_client, agent_card)"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 5,
+    "detected_count": 5,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": true,
+      "agent_multiplicity": true,
+      "memory_scope": true,
+      "human_involvement": false
+    }
+  }
+}

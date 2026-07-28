@@ -1,0 +1,209 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/airbnb_planner_multiagent",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.608041+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "langgraph_langchain",
+      "source": "both"
+    },
+    {
+      "id": "a2a_sdk",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "react_loop",
+      "name": "Reason and Act Loop",
+      "abbrev": "ReAct",
+      "section": "IV-A",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "host_agent/routing_agent.py",
+          "line": 295,
+          "symbol": "create_agent",
+          "rule_id": "langgraph_langchain/react_loop",
+          "excerpt": "return routing_agent_instance.create_agent()"
+        },
+        {
+          "type": "symbol",
+          "file": "airbnb_agent/airbnb_agent.py",
+          "line": 18,
+          "symbol": "create_react_agent",
+          "rule_id": "langgraph_langchain/react_loop",
+          "excerpt": "from langgraph.prebuilt import create_react_agent"
+        },
+        {
+          "type": "symbol",
+          "file": "airbnb_agent/airbnb_agent.py",
+          "line": 91,
+          "symbol": "create_react_agent",
+          "rule_id": "langgraph_langchain/react_loop",
+          "excerpt": "airbnb_agent_runnable = create_react_agent("
+        },
+        {
+          "type": "symbol",
+          "file": "airbnb_agent/airbnb_agent.py",
+          "line": 277,
+          "symbol": "create_react_agent",
+          "rule_id": "langgraph_langchain/react_loop",
+          "excerpt": "agent_runnable = create_react_agent("
+        }
+      ]
+    },
+    {
+      "id": "checkpointing",
+      "name": "Checkpointing and Resumability",
+      "abbrev": "Checkpoint",
+      "section": "VI-E",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "airbnb_agent/airbnb_agent.py",
+          "line": 17,
+          "symbol": "MemorySaver",
+          "rule_id": "langgraph_langchain/checkpointing",
+          "excerpt": "from langgraph.checkpoint.memory import MemorySaver"
+        },
+        {
+          "type": "symbol",
+          "file": "airbnb_agent/airbnb_agent.py",
+          "line": 26,
+          "symbol": "MemorySaver",
+          "rule_id": "langgraph_langchain/checkpointing",
+          "excerpt": "memory = MemorySaver()"
+        },
+        {
+          "type": "kwarg",
+          "file": "airbnb_agent/airbnb_agent.py",
+          "line": 91,
+          "symbol": "checkpointer",
+          "rule_id": "langgraph_langchain/checkpointing",
+          "excerpt": "airbnb_agent_runnable = create_react_agent("
+        },
+        {
+          "type": "kwarg",
+          "file": "airbnb_agent/airbnb_agent.py",
+          "line": 277,
+          "symbol": "checkpointer",
+          "rule_id": "langgraph_langchain/checkpointing",
+          "excerpt": "agent_runnable = create_react_agent("
+        }
+      ]
+    },
+    {
+      "id": "protocol_integration",
+      "name": "Protocol-Level Integration",
+      "abbrev": "MCP",
+      "section": "VII-B",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "airbnb_agent/__main__.py",
+          "line": 13,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "airbnb_agent/__main__.py",
+          "line": 149,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "a2a_server = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "weather_agent/__main__.py",
+          "line": 7,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "weather_agent/__main__.py",
+          "line": 83,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "a2a_app = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "airbnb_agent/__main__.py",
+          "line": 14,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.request_handlers import DefaultRequestHandler"
+        },
+        {
+          "type": "config",
+          "file": "pyproject.toml",
+          "symbol": "mcp",
+          "rule_id": "config/protocol_integration"
+        }
+      ]
+    },
+    {
+      "id": "handoff",
+      "name": "Handoff",
+      "abbrev": "Handoff",
+      "section": "V-E",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "host_agent/remote_agent_connection.py",
+          "line": 5,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "from a2a.client import A2AClient"
+        },
+        {
+          "type": "symbol",
+          "file": "host_agent/remote_agent_connection.py",
+          "line": 30,
+          "symbol": "A2AClient",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "self.agent_client = A2AClient("
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 4,
+    "detected_count": 4,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": true,
+      "agent_multiplicity": true,
+      "memory_scope": true,
+      "human_involvement": false
+    }
+  }
+}

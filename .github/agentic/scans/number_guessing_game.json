@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/number_guessing_game",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.722336+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "a2a_sdk",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "protocol_integration",
+      "name": "Protocol-Level Integration",
+      "abbrev": "MCP",
+      "section": "VII-B",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "utils/server.py",
+          "line": 11,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps.jsonrpc.starlette_app import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "utils/server.py",
+          "line": 45,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "return A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "utils/server.py",
+          "line": 12,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.request_handlers.default_request_handler import ("
+        },
+        {
+          "type": "symbol",
+          "file": "utils/server.py",
+          "line": 44,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "handler = DefaultRequestHandler(executor, InMemoryTaskStore())"
+        },
+        {
+          "type": "symbol",
+          "file": "agent_Carol.py",
+          "line": 20,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import AgentCard, Part, TextPart"
+        }
+      ]
+    },
+    {
+      "id": "handoff",
+      "name": "Handoff",
+      "abbrev": "Handoff",
+      "section": "V-E",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "utils/protocol_wrappers.py",
+          "line": 11,
+          "symbol": "ClientFactory",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "from a2a.client import ClientConfig, ClientFactory, minimal_agent_card"
+        },
+        {
+          "type": "symbol",
+          "file": "utils/protocol_wrappers.py",
+          "line": 31,
+          "symbol": "ClientFactory",
+          "rule_id": "a2a_sdk/handoff",
+          "excerpt": "_client_factory = ClientFactory(ClientConfig())"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 2,
+    "detected_count": 2,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": false,
+      "agent_multiplicity": true,
+      "memory_scope": false,
+      "human_involvement": false
+    }
+  }
+}

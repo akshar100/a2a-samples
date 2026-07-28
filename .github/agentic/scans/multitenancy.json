@@ -1,0 +1,86 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/multitenancy",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.715538+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "a2a_sdk",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "protocol_integration",
+      "name": "Protocol-Level Integration",
+      "abbrev": "MCP",
+      "section": "VII-B",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "a2a_server.py",
+          "line": 32,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.request_handlers import DefaultRequestHandler"
+        },
+        {
+          "type": "symbol",
+          "file": "a2a_server.py",
+          "line": 204,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "handler = DefaultRequestHandler("
+        },
+        {
+          "type": "symbol",
+          "file": "a2a_server.py",
+          "line": 35,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import AgentCapabilities, AgentCard, AgentInterface, AgentSkill"
+        },
+        {
+          "type": "symbol",
+          "file": "a2a_server.py",
+          "line": 123,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "return AgentCard("
+        },
+        {
+          "type": "symbol",
+          "file": "a2a_client.py",
+          "line": 31,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import AgentCard"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 1,
+    "detected_count": 1,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": false,
+      "agent_multiplicity": false,
+      "memory_scope": false,
+      "human_involvement": false
+    }
+  }
+}

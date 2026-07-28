@@ -1,0 +1,86 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/sign_and_verify_agent_card",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.729614+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "a2a_sdk",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "protocol_integration",
+      "name": "Protocol-Level Integration",
+      "abbrev": "MCP",
+      "section": "VII-B",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 8,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.request_handlers import DefaultRequestHandler"
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 134,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "request_handler = DefaultRequestHandler("
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 14,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import ("
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 74,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "public_agent_card = AgentCard("
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 92,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "extended_agent_card = AgentCard("
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 1,
+    "detected_count": 1,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": false,
+      "agent_multiplicity": false,
+      "memory_scope": false,
+      "human_involvement": false
+    }
+  }
+}

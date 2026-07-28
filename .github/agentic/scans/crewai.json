@@ -1,0 +1,141 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/crewai",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.672925+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "crewai",
+      "source": "both"
+    },
+    {
+      "id": "a2a_sdk",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "role_based_team",
+      "name": "Role-Based Teams",
+      "abbrev": "Roles",
+      "section": "V-C",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 17,
+          "symbol": "Crew",
+          "rule_id": "crewai/role_based_team",
+          "excerpt": "from crewai import LLM, Agent, Crew, Task"
+        },
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 192,
+          "symbol": "Crew",
+          "rule_id": "crewai/role_based_team",
+          "excerpt": "self.image_crew = Crew("
+        },
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 17,
+          "symbol": "Agent",
+          "rule_id": "crewai/role_based_team",
+          "excerpt": "from crewai import LLM, Agent, Crew, Task"
+        },
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 154,
+          "symbol": "Agent",
+          "rule_id": "crewai/role_based_team",
+          "excerpt": "self.image_creator_agent = Agent("
+        },
+        {
+          "type": "kwarg",
+          "file": "agent.py",
+          "line": 154,
+          "symbol": "role",
+          "rule_id": "crewai/role_based_team",
+          "excerpt": "self.image_creator_agent = Agent("
+        }
+      ]
+    },
+    {
+      "id": "protocol_integration",
+      "name": "Protocol-Level Integration",
+      "abbrev": "MCP",
+      "section": "VII-B",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 12,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 85,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "server = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 13,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.request_handlers import DefaultRequestHandler"
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 81,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "request_handler = DefaultRequestHandler("
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 15,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import ("
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 2,
+    "detected_count": 2,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": false,
+      "agent_multiplicity": true,
+      "memory_scope": false,
+      "human_involvement": false
+    }
+  }
+}

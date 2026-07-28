@@ -1,0 +1,141 @@
+{
+  "schema_version": "0.1",
+  "tool": {
+    "name": "agentic-pattern-linter",
+    "version": "0.1.0",
+    "rules_version": "0.1"
+  },
+  "repo": {
+    "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/llama_index_file_chat",
+    "commit": "0000000",
+    "scanned_at": "2026-07-28T22:15:06.705653+00:00",
+    "languages": [
+      "python"
+    ]
+  },
+  "frameworks": [
+    {
+      "id": "llamaindex",
+      "source": "both"
+    },
+    {
+      "id": "a2a_sdk",
+      "source": "dependency"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "structured_workflow",
+      "name": "Structured Workflow with Agentic Islands",
+      "abbrev": "Workflow",
+      "section": "IV-F",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 8,
+          "symbol": "Workflow",
+          "rule_id": "llamaindex/structured_workflow",
+          "excerpt": "from llama_index.core.workflow import ("
+        },
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 104,
+          "symbol": "@step",
+          "rule_id": "llamaindex/structured_workflow",
+          "excerpt": "def route(self, ev: InputEvent) -> ParseEvent | ChatEvent:"
+        },
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 112,
+          "symbol": "@step",
+          "rule_id": "llamaindex/structured_workflow",
+          "excerpt": "async def parse(self, ctx: Context, ev: ParseEvent) -> ChatEvent:"
+        },
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 135,
+          "symbol": "@step",
+          "rule_id": "llamaindex/structured_workflow",
+          "excerpt": "async def chat(self, ctx: Context, event: ChatEvent) -> ChatResponseEvent:"
+        },
+        {
+          "type": "symbol",
+          "file": "agent.py",
+          "line": 8,
+          "symbol": "StartEvent",
+          "rule_id": "llamaindex/structured_workflow",
+          "excerpt": "from llama_index.core.workflow import ("
+        }
+      ]
+    },
+    {
+      "id": "protocol_integration",
+      "name": "Protocol-Level Integration",
+      "abbrev": "MCP",
+      "section": "VII-B",
+      "tier": 1,
+      "status": "detected",
+      "confidence": "high",
+      "evidence": [
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 7,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 76,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "server = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 8,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.request_handlers import DefaultRequestHandler"
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 69,
+          "symbol": "DefaultRequestHandler",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "request_handler = DefaultRequestHandler("
+        },
+        {
+          "type": "symbol",
+          "file": "__main__.py",
+          "line": 10,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import ("
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pattern_count": 2,
+    "detected_count": 2,
+    "inferred_count": 0,
+    "dimensions": {
+      "control_flow": true,
+      "agent_multiplicity": false,
+      "memory_scope": false,
+      "human_involvement": false
+    }
+  }
+}
