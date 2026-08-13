@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/azureaifoundry_sdk",
     "commit": "0000000",
-    "scanned_at": "2026-08-12T07:51:35.975269+00:00",
+    "scanned_at": "2026-08-13T07:52:33.207219+00:00",
     "languages": [
       "python"
     ]
@@ -70,7 +70,7 @@
         },
         {
           "type": "symbol",
-          "file": "currencyagentdemo/currencyagent/__main__.py",
+          "file": "multi_agent/remote_agents/tool_agent/__main__.py",
           "line": 6,
           "symbol": "A2AStarletteApplication",
           "rule_id": "a2a_sdk/protocol_integration",
@@ -78,8 +78,8 @@
         },
         {
           "type": "symbol",
-          "file": "currencyagentdemo/currencyagent/__main__.py",
-          "line": 46,
+          "file": "multi_agent/remote_agents/tool_agent/__main__.py",
+          "line": 32,
           "symbol": "A2AStarletteApplication",
           "rule_id": "a2a_sdk/protocol_integration",
           "excerpt": "server = A2AStarletteApplication("
@@ -94,7 +94,7 @@
         },
         {
           "type": "config",
-          "file": "currencyagentdemo/currencyagent/pyproject.toml",
+          "file": "multi_agent/host_agent/pyproject.toml",
           "symbol": "mcp",
           "rule_id": "config/protocol_integration"
         }

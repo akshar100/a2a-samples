@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/dice_agent_grpc",
     "commit": "0000000",
-    "scanned_at": "2026-08-12T07:51:36.013396+00:00",
+    "scanned_at": "2026-08-13T07:52:33.233938+00:00",
     "languages": [
       "python"
     ]
@@ -47,14 +47,6 @@
         },
         {
           "type": "symbol",
-          "file": "test_client.py",
-          "line": 11,
-          "symbol": "AgentCard",
-          "rule_id": "a2a_sdk/protocol_integration",
-          "excerpt": "from a2a.types import ("
-        },
-        {
-          "type": "symbol",
           "file": "__main__.py",
           "line": 13,
           "symbol": "AgentCard",
@@ -68,6 +60,14 @@
           "symbol": "AgentCard",
           "rule_id": "a2a_sdk/protocol_integration",
           "excerpt": "return AgentCard("
+        },
+        {
+          "type": "symbol",
+          "file": "test_client.py",
+          "line": 11,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import ("
         }
       ]
     }

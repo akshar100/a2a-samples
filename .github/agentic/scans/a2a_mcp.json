@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/a2a_mcp",
     "commit": "0000000",
-    "scanned_at": "2026-08-12T07:51:35.832382+00:00",
+    "scanned_at": "2026-08-13T07:52:33.106600+00:00",
     "languages": [
       "python"
     ]
@@ -35,14 +35,6 @@
       "evidence": [
         {
           "type": "symbol",
-          "file": "src/a2a_mcp/common/workflow.py",
-          "line": 135,
-          "symbol": "add_node",
-          "rule_id": "langgraph_langchain/structured_workflow",
-          "excerpt": "self.graph.add_node(node.id, query=node.task)"
-        },
-        {
-          "type": "symbol",
           "file": "src/a2a_mcp/agents/orchestrator_agent.py",
           "line": 95,
           "symbol": "add_node",
@@ -52,10 +44,10 @@
         {
           "type": "symbol",
           "file": "src/a2a_mcp/common/workflow.py",
-          "line": 143,
-          "symbol": "add_edge",
+          "line": 135,
+          "symbol": "add_node",
           "rule_id": "langgraph_langchain/structured_workflow",
-          "excerpt": "self.graph.add_edge(from_node_id, to_node_id)"
+          "excerpt": "self.graph.add_node(node.id, query=node.task)"
         },
         {
           "type": "symbol",
@@ -64,6 +56,14 @@
           "symbol": "add_edge",
           "rule_id": "langgraph_langchain/structured_workflow",
           "excerpt": "self.graph.add_edge(node_id, node.id)"
+        },
+        {
+          "type": "symbol",
+          "file": "src/a2a_mcp/common/workflow.py",
+          "line": 143,
+          "symbol": "add_edge",
+          "rule_id": "langgraph_langchain/structured_workflow",
+          "excerpt": "self.graph.add_edge(from_node_id, to_node_id)"
         }
       ]
     },
@@ -172,11 +172,11 @@
         },
         {
           "type": "symbol",
-          "file": "src/a2a_mcp/common/workflow.py",
-          "line": 13,
+          "file": "src/a2a_mcp/agents/__main__.py",
+          "line": 20,
           "symbol": "AgentCard",
           "rule_id": "a2a_sdk/protocol_integration",
-          "excerpt": "from a2a.types import ("
+          "excerpt": "from a2a.types import AgentCard"
         },
         {
           "type": "config",

@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/langgraph",
     "commit": "0000000",
-    "scanned_at": "2026-08-12T07:51:36.055407+00:00",
+    "scanned_at": "2026-08-13T07:52:33.263611+00:00",
     "languages": [
       "python"
     ]
@@ -129,8 +129,8 @@
         },
         {
           "type": "symbol",
-          "file": "app/test_client.py",
-          "line": 9,
+          "file": "app/__main__.py",
+          "line": 16,
           "symbol": "AgentCard",
           "rule_id": "a2a_sdk/protocol_integration",
           "excerpt": "from a2a.types import ("
