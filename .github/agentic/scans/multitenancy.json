@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/multitenancy",
     "commit": "0000000",
-    "scanned_at": "2026-09-03T11:13:01.778837+00:00",
+    "scanned_at": "2026-09-04T11:16:47.728982+00:00",
     "languages": [
       "python"
     ]
@@ -47,6 +47,14 @@
         },
         {
           "type": "symbol",
+          "file": "a2a_client.py",
+          "line": 31,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import AgentCard"
+        },
+        {
+          "type": "symbol",
           "file": "a2a_server.py",
           "line": 35,
           "symbol": "AgentCard",
@@ -60,14 +68,6 @@
           "symbol": "AgentCard",
           "rule_id": "a2a_sdk/protocol_integration",
           "excerpt": "return AgentCard("
-        },
-        {
-          "type": "symbol",
-          "file": "a2a_client.py",
-          "line": 31,
-          "symbol": "AgentCard",
-          "rule_id": "a2a_sdk/protocol_integration",
-          "excerpt": "from a2a.types import AgentCard"
         }
       ]
     }
