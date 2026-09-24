@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/ag2",
     "commit": "0000000",
-    "scanned_at": "2026-09-23T11:34:34.990148+00:00",
+    "scanned_at": "2026-09-24T11:44:32.669154+00:00",
     "languages": [
       "python"
     ]
@@ -31,22 +31,6 @@
       "evidence": [
         {
           "type": "symbol",
-          "file": "a2a_python_reviewer.py",
-          "line": 6,
-          "symbol": "ConversableAgent",
-          "rule_id": "autogen/react_loop",
-          "excerpt": "from autogen import ConversableAgent, LLMConfig"
-        },
-        {
-          "type": "symbol",
-          "file": "a2a_python_reviewer.py",
-          "line": 19,
-          "symbol": "ConversableAgent",
-          "rule_id": "autogen/react_loop",
-          "excerpt": "reviewer_agent = ConversableAgent("
-        },
-        {
-          "type": "symbol",
           "file": "fastapi_codegen_a2a_client.py",
           "line": 3,
           "symbol": "ConversableAgent",
@@ -60,6 +44,22 @@
           "symbol": "ConversableAgent",
           "rule_id": "autogen/react_loop",
           "excerpt": "codegen_agent = ConversableAgent("
+        },
+        {
+          "type": "symbol",
+          "file": "a2a_python_reviewer.py",
+          "line": 6,
+          "symbol": "ConversableAgent",
+          "rule_id": "autogen/react_loop",
+          "excerpt": "from autogen import ConversableAgent, LLMConfig"
+        },
+        {
+          "type": "symbol",
+          "file": "a2a_python_reviewer.py",
+          "line": 19,
+          "symbol": "ConversableAgent",
+          "rule_id": "autogen/react_loop",
+          "excerpt": "reviewer_agent = ConversableAgent("
         },
         {
           "type": "symbol",

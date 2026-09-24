@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/birthday_planner_adk",
     "commit": "0000000",
-    "scanned_at": "2026-09-23T11:34:35.116098+00:00",
+    "scanned_at": "2026-09-24T11:44:32.736633+00:00",
     "languages": [
       "python"
     ]
@@ -31,22 +31,6 @@
       "evidence": [
         {
           "type": "symbol",
-          "file": "calendar_agent/__main__.py",
-          "line": 10,
-          "symbol": "A2AStarletteApplication",
-          "rule_id": "a2a_sdk/protocol_integration",
-          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
-        },
-        {
-          "type": "symbol",
-          "file": "calendar_agent/__main__.py",
-          "line": 152,
-          "symbol": "A2AStarletteApplication",
-          "rule_id": "a2a_sdk/protocol_integration",
-          "excerpt": "a2a_app = A2AStarletteApplication("
-        },
-        {
-          "type": "symbol",
           "file": "birthday_planner/__main__.py",
           "line": 9,
           "symbol": "A2AStarletteApplication",
@@ -64,7 +48,23 @@
         {
           "type": "symbol",
           "file": "calendar_agent/__main__.py",
-          "line": 11,
+          "line": 10,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
+          "type": "symbol",
+          "file": "calendar_agent/__main__.py",
+          "line": 152,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "a2a_app = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "birthday_planner/__main__.py",
+          "line": 10,
           "symbol": "DefaultRequestHandler",
           "rule_id": "a2a_sdk/protocol_integration",
           "excerpt": "from a2a.server.request_handlers import DefaultRequestHandler"

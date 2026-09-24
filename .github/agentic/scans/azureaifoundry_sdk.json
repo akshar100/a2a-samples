@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/azureaifoundry_sdk",
     "commit": "0000000",
-    "scanned_at": "2026-09-23T11:34:35.097647+00:00",
+    "scanned_at": "2026-09-24T11:44:32.726864+00:00",
     "languages": [
       "python"
     ]
@@ -86,7 +86,7 @@
         },
         {
           "type": "symbol",
-          "file": "multi_agent/remote_agents/tool_agent/__main__.py",
+          "file": "multi_agent/remote_agents/playwright_agent/__main__.py",
           "line": 6,
           "symbol": "A2AStarletteApplication",
           "rule_id": "a2a_sdk/protocol_integration",

@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/github-agent",
     "commit": "0000000",
-    "scanned_at": "2026-09-23T11:34:35.150621+00:00",
+    "scanned_at": "2026-09-24T11:44:32.754937+00:00",
     "languages": [
       "python"
     ]
@@ -63,7 +63,7 @@
         },
         {
           "type": "symbol",
-          "file": "openai_agent_executor.py",
+          "file": "__main__.py",
           "line": 10,
           "symbol": "AgentCard",
           "rule_id": "a2a_sdk/protocol_integration",

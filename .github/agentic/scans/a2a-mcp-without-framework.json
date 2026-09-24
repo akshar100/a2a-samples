@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/a2a-mcp-without-framework",
     "commit": "0000000",
-    "scanned_at": "2026-09-23T11:34:34.924661+00:00",
+    "scanned_at": "2026-09-24T11:44:32.634104+00:00",
     "languages": [
       "python"
     ]
@@ -47,14 +47,6 @@
         },
         {
           "type": "symbol",
-          "file": "src/no_llm_framework/client/agent.py",
-          "line": 16,
-          "symbol": "AgentCard",
-          "rule_id": "a2a_sdk/protocol_integration",
-          "excerpt": "from a2a.types import ("
-        },
-        {
-          "type": "symbol",
           "file": "src/no_llm_framework/server/__main__.py",
           "line": 7,
           "symbol": "AgentCard",
@@ -68,6 +60,14 @@
           "symbol": "AgentCard",
           "rule_id": "a2a_sdk/protocol_integration",
           "excerpt": "agent_card = AgentCard("
+        },
+        {
+          "type": "symbol",
+          "file": "src/no_llm_framework/client/agent.py",
+          "line": 16,
+          "symbol": "AgentCard",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.types import ("
         },
         {
           "type": "config",
