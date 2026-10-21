@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/azureaifoundry_sdk",
     "commit": "0000000",
-    "scanned_at": "2026-10-20T11:34:22.647352+00:00",
+    "scanned_at": "2026-10-21T11:47:06.690644+00:00",
     "languages": [
       "python"
     ]
@@ -70,22 +70,6 @@
         },
         {
           "type": "symbol",
-          "file": "currencyagentdemo/currencyagent/__main__.py",
-          "line": 6,
-          "symbol": "A2AStarletteApplication",
-          "rule_id": "a2a_sdk/protocol_integration",
-          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
-        },
-        {
-          "type": "symbol",
-          "file": "currencyagentdemo/currencyagent/__main__.py",
-          "line": 46,
-          "symbol": "A2AStarletteApplication",
-          "rule_id": "a2a_sdk/protocol_integration",
-          "excerpt": "server = A2AStarletteApplication("
-        },
-        {
-          "type": "symbol",
           "file": "multi_agent/remote_agents/playwright_agent/__main__.py",
           "line": 6,
           "symbol": "A2AStarletteApplication",
@@ -93,8 +77,24 @@
           "excerpt": "from a2a.server.apps import A2AStarletteApplication"
         },
         {
+          "type": "symbol",
+          "file": "multi_agent/remote_agents/playwright_agent/__main__.py",
+          "line": 32,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "server = A2AStarletteApplication("
+        },
+        {
+          "type": "symbol",
+          "file": "multi_agent/remote_agents/tool_agent/__main__.py",
+          "line": 6,
+          "symbol": "A2AStarletteApplication",
+          "rule_id": "a2a_sdk/protocol_integration",
+          "excerpt": "from a2a.server.apps import A2AStarletteApplication"
+        },
+        {
           "type": "config",
-          "file": "currencyagentdemo/currencyagent/pyproject.toml",
+          "file": "multi_agent/host_agent/pyproject.toml",
           "symbol": "mcp",
           "rule_id": "config/protocol_integration"
         }
