@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/ag2",
     "commit": "0000000",
-    "scanned_at": "2026-10-24T10:57:51.296878+00:00",
+    "scanned_at": "2026-10-25T11:26:09.488519+00:00",
     "languages": [
       "python"
     ]
@@ -47,24 +47,24 @@
         },
         {
           "type": "symbol",
-          "file": "a2a_python_reviewer.py",
-          "line": 6,
+          "file": "cli_codegen_a2a_client.py",
+          "line": 3,
           "symbol": "ConversableAgent",
           "rule_id": "autogen/react_loop",
           "excerpt": "from autogen import ConversableAgent, LLMConfig"
         },
         {
           "type": "symbol",
-          "file": "a2a_python_reviewer.py",
-          "line": 19,
+          "file": "cli_codegen_a2a_client.py",
+          "line": 14,
           "symbol": "ConversableAgent",
           "rule_id": "autogen/react_loop",
-          "excerpt": "reviewer_agent = ConversableAgent("
+          "excerpt": "codegen_agent = ConversableAgent("
         },
         {
           "type": "symbol",
-          "file": "cli_codegen_a2a_client.py",
-          "line": 3,
+          "file": "a2a_python_reviewer.py",
+          "line": 6,
           "symbol": "ConversableAgent",
           "rule_id": "autogen/react_loop",
           "excerpt": "from autogen import ConversableAgent, LLMConfig"

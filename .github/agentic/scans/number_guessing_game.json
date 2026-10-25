@@ -8,7 +8,7 @@
   "repo": {
     "url": "file:///home/runner/work/a2a-samples/a2a-samples/samples/python/agents/number_guessing_game",
     "commit": "0000000",
-    "scanned_at": "2026-10-24T10:57:51.522745+00:00",
+    "scanned_at": "2026-10-25T11:26:09.612861+00:00",
     "languages": [
       "python"
     ]
@@ -63,8 +63,8 @@
         },
         {
           "type": "symbol",
-          "file": "agent_Carol.py",
-          "line": 20,
+          "file": "agent_Alice.py",
+          "line": 28,
           "symbol": "AgentCard",
           "rule_id": "a2a_sdk/protocol_integration",
           "excerpt": "from a2a.types import AgentCard, Part, TextPart"
